@@ -1,8 +1,8 @@
-let cpuNum = getRandomInt(3),
-itemArray = ["rock","paper","scissors"],
-userEntry = prompt("aa"),
-userNum = getUserNum(userEntry),
-output = compare(userNum, cpuNum);
+let itemArray = ["rock","paper","scissors"],
+scoreUser = 0,
+scoreCpu = 0;
+
+getWinner(getUserNum(prompt('Enter "rock:, "paper", or "scissors" to play :3')), getRandomInt(3));
 
 function getUserNum(userString) {
 let userComp = userString.toLowerCase();
@@ -13,26 +13,37 @@ function getRandomInt(max) {
         return Math.floor(Math.random() * max);
 }
 
-function compare(user, cpu) {
-        if (user + cpu == 2 && user != cpu) {
-                getWinner("<", user, cpu);
-        }
-        else if (user == cpu) {
-                console.log(`It's a tie! You both chose ${itemArray[user]}!`)
+function getWinner(user, cpu) {
+        if (user != -1) {
+                switch(Math.abs(user - cpu)) {
+                        case 0:
+                                alert(`It's a tie! You both chose ${itemArray[user]}!`);
+                                break;
+                        case 1:
+                                compare(">", user, cpu);
+                                break;
+                        case 2:
+                                compare("<", user, cpu);
+                                break;
+                        default:
+                                break;
+                }
         } else {
-                getWinner(">", user, cpu);
+                alert("Enter the right thing ya dingus.");
         }
 }
 
-function getWinner(type, user, cpu) {
+function compare(type, user, cpu) {
         let win = `You win! ${itemArray[user]} beats ${itemArray[cpu]}.`,
         lose = `You lose! ${itemArray[cpu]} beats ${itemArray[user]}.`,
-        message = "Default";
-
+        message;
                 if (type == "<") {
+                        ++scoreUser;
                         message = (user < cpu) ? win : lose;
                 } else {
+                        ++scoreCpu;
                         message = (user > cpu) ? win : lose;
                 };
-        console.log(message);
+        alert(message);
+        alert(`It is currently ${scoreUser} to ${scoreCpu}.`);
 }
