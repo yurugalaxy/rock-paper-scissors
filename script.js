@@ -1,25 +1,31 @@
 const bestOf = 5,
 choiceArray = ["rock","paper","scissors"];
 
-// let playerNum = 5,
-// opponentNum = 2;
-let playerNum = GetPlayerChoice(prompt("aaa")),
-opponentNum = Math.floor(Math.random() * 3),
-playerScore = 0,
+let playerScore = 0,
 opponentScore = 0;
 
-function GetPlayerChoice(entry) {
-        let choice = entry.toLowerCase();
+BestWins(bestOf);
 
-        return choiceArray.indexOf(choice);
+
+function BestWins(bestof) {
+        let bestofCalc = Math.floor(bestof / 2) + 1;
+
+        while (playerScore < bestofCalc && opponentScore < bestofCalc) {
+                PlayRound();
+        }
+
+        if (playerScore > opponentScore) {
+                alert(`You won ${playerScore} to ${opponentScore}!`);
+        } else {
+                alert(`You lost ${opponentScore} to ${playerScore}!`);
+        }
 }
 
-
-// BestWins(bestOf);
-// PlayRound(playerNum, opponentNum);
-
-function PlayRound(player, opponent) {
-        let result;
+function PlayRound() {
+        let result,
+        player = GetPlayerChoice(prompt("Choose "+
+                "'rock', 'paper', or 'scissors' to play.")),
+        opponent = Math.floor(Math.random() * 3);
 
         if (player === -1) {
                 alert("Enter the right things ya dingus")
@@ -40,11 +46,19 @@ function PlayRound(player, opponent) {
         DisplayResult(result, player, opponent);
 }
 
+function GetPlayerChoice(entry) {
+        let choice = entry.toLowerCase();
+
+        return choiceArray.indexOf(choice);
+}
 
 function DisplayResult(result, player, opponent) {
-        let win = `You win! ${choiceArray[player]} beats ${choiceArray[opponent]}.`,
-        lose = `You lose! ${choiceArray[opponent]} beats ${choiceArray[player]}.`,
-        tie = `It's a tie! You both chose ${choiceArray[player]}!`,
+        let win =
+        `You win! ${choiceArray[player]} beats ${choiceArray[opponent]}.`,
+        lose =
+        `You lose! ${choiceArray[opponent]} beats ${choiceArray[player]}.`,
+        tie =
+        `It's a tie! You both chose ${choiceArray[player]}!`,
         message;
 
         switch (result) {
@@ -62,125 +76,3 @@ function DisplayResult(result, player, opponent) {
         }
         alert(message + "\nYou:" + playerScore + " Opp:" + opponentScore);
 }
-
-function BestWins(bestof) {
-        let bestofCalc = bestof / 2 + 1;
-
-        while (playerScore < bestofCalc || opponentScore < bestofCalc) {
-                PlayRound(playerNum, opponentNum);
-        }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function PlayRound(player, opponent) {
-//         let type;
-
-//         if (player == -1) {
-//                 alert("Enter the right thing ya dingus.");
-//                 return;
-//         }
-
-//         switch(Math.abs(player - opponent)) {
-//                 case 0:
-//                         type = "="
-//                         break;
-//                 case 1:
-//                         type = ">"
-//                         break;
-//                 case 2:
-//                         type = "<"
-//                         break;
-//                 default:
-//                         break;
-//         }
-//         GetWinner(type, player, opponent);
-// }
-
-// function Compare(player, opponent) {
-//         let type;
-
-//         if (player == -1) {
-//                 alert("Enter the right thing ya dingus.");
-//                 return;
-//         }
-
-//         switch(Math.abs(player - opponent)) {
-//                 case 0:
-//                         type = "="
-//                         break;
-//                 case 1:
-//                         type = ">"
-//                         break;
-//                 case 2:
-//                         type = "<"
-//                         break;
-//                 default:
-//                         break;
-//         }
-//         return type;
-// }
-
-// function Win() {
-//         return;
-// }
-
-// function Lose() {
-//         return;
-// }
-
-// function Tie() {
-//         return;
-// }
-
-// function GetWinner(type, player, opponent) {
-//         let win = `You win! ${choiceArray[player]} beats ${choiceArray[opponent]}.`,
-//         lose = `You lose! ${choiceArray[opponent]} beats ${choiceArray[player]}.`,
-//         tie = `It's a tie! You both chose ${choiceArray[player]}!`,
-//         message;
-
-//         switch (type) {
-//                 case "=":
-//                         message = tie;
-//                         break;
-//                 case "<":
-//                         message = (player < opponent) ? win : lose;
-//                         break;
-//                 case ">":
-//                         message = (player > opponent) ? win : lose;
-//                         break;
-//                 default:
-//                         break;
-//         }
-
-//         return message;
-// }
