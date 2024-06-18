@@ -1,11 +1,11 @@
-const bestOf = 5,
-choiceArray = ["rock","paper","scissors"];
+const bestOf = rounds.value,
+choiceArray = ["rock","paper","scissors"],
+divResult = document.querySelector(".Result"),
+divScore = document.querySelector(".Score"),
+playButtons = document.querySelectorAll(".mPlayButton");
 
 let playerScore = 0,
 opponentScore = 0;
-
-BestWins(bestOf);
-
 
 function BestWins(bestof) {
         let bestofCalc = Math.floor(bestof / 2) + 1;
@@ -21,16 +21,16 @@ function BestWins(bestof) {
         }
 }
 
-function PlayRound() {
-        let result,
-        player = GetPlayerChoice(prompt("Choose "+
-                "'rock', 'paper', or 'scissors' to play.")),
-        opponent = Math.floor(Math.random() * 3);
+playButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+                PlayRound(button.id)
+        });
+});
 
-        if (player === -1) {
-                alert("Enter the right things ya dingus")
-                return;
-        }
+function PlayRound(inputPlayer) {
+        let result,
+        opponent = Math.floor(Math.random() * 3),
+        player = choiceArray.indexOf(inputPlayer);
 
         switch (Math.abs(player - opponent)) {
                 case 0:
@@ -43,13 +43,8 @@ function PlayRound() {
                         result = (player < opponent) ? "win" : "lose" ;
                         break;
         }
+        return {res: result, pl: player, opp: opponent};
         DisplayResult(result, player, opponent);
-}
-
-function GetPlayerChoice(entry) {
-        let choice = entry.toLowerCase();
-
-        return choiceArray.indexOf(choice);
 }
 
 function DisplayResult(result, player, opponent) {
@@ -63,16 +58,24 @@ function DisplayResult(result, player, opponent) {
 
         switch (result) {
                 case "win":
+                        divResult.classList.remove("mLoseText");
+                        divResult.classList.add("mWinText");
                         message = win
                         playerScore++;
                         break;
                 case "lose":
+                        divResult.classList.remove("mWinText");
+                        divResult.classList.add("mLoseText");
                         message = lose;
                         opponentScore++;
                         break;
                 default:
+                        divResult.classList.remove("mWinText");
+                        divResult.classList.remove("mLoseText");
                         message = tie;
                         break;
         }
-        alert(message + "\nYou:" + playerScore + " Opp:" + opponentScore);
+        divResult.textContent = message;
+        divScore.textContent =
+        "You:" + playerScore + " Opponent:" + opponentScore;
 }

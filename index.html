@@ -6,15 +6,24 @@
         <meta name="viewport" content="width=device-width">
         <title>replit</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
 </head>
 
 <body>
-        <div>
-                <button class="ButtonRock">Rock</button>
-                <button class="ButtonPaper">Paper</button>
-                <button class="ButtonScissors">Scissors</button>
+        <label for="BestOfSelect">Best of</label>
+        <select id="BestOfSelect" name="rounds">
+                <option selected>3</option>
+                <option>5</option>
+                <option>7</option>
+                <option>9</option>
+        </select>
+        <div class="ButtonContainer">
+                <button id="rock" class="ButtonRock mPlayButton">Rock</button>
+                <button id="paper" class="ButtonPaper mPlayButton">Paper</button>
+                <button id="scissors" class="ButtonScissors mPlayButton">Scissors</button>
         </div>
+        <div class="Result">Click a button to start!</div>
+        <div class="Score">Score:</div>
 </body>
 
 </html>
