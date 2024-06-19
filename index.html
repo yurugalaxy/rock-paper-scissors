@@ -3,17 +3,51 @@
 
 <head>
         <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width">
         <title>replit</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
 </head>
 
 <body>
-        <div>
-                <button class="ButtonRock">Rock</button>
-                <button class="ButtonPaper">Paper</button>
-                <button class="ButtonScissors">Scissors</button>
+        <div class="Header">
+                <div class="mLightText">Rock Paper Scissors :3</div>
+        </div>
+        <div class="ContentContainer">
+                <div class="mLightText">Click a button to play!</div>
+                <div class="SelectContainer">
+                        <label class="mLightText" for="BestOfSelect">
+                                Best of
+                        </label>
+                        <select id="BestOfSelect" name="Rounds">
+                                <option selected>3</option>
+                                <option>5</option>
+                                <option>7</option>
+                                <option>9</option>
+                        </select>
+                </div>
+                <div class="PlayContainer">
+                        <button id="rock" class="
+                        ButtonRock mPlayButton roboto-bold">Rock
+                        </button>
+                        <button id="paper" class="
+                        ButtonPaper mPlayButton roboto-bold">Paper
+                        </button>
+                        <button id="scissors" class="
+                        ButtonScissors mPlayButton roboto-bold">Scissors
+                        </button>
+                </div>
+                <button class="Reset">Reset</button>
+                <div class="ResultContainer">
+                        <div class="Result mLightText"></div>
+                        <div class="Score mLightText roboto-bold"></div>
+                </div>
+        </div>
+        <div class="Footer">
+                <div class="mLightText">Made by Kae :3</div>
         </div>
 </body>
 
