@@ -128,7 +128,7 @@ p, h1, h2, h3, h4, h5, h6 {
 } */
 
 body {
-  background-color: #4f4f4f;
+  background-color: #383d3d;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -139,7 +139,7 @@ body {
 select {
   width: 50px;
   text-align:center;
-  background-color: #4f4f4f;
+  background-color: #444849;
   color: #eaebdf;
   box-shadow: 0 0 5px #2b2b2b;
   border: 1px solid #9d9e96;
@@ -154,12 +154,12 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: 1px solid #eaebdf;
+  outline: 1px solid #64696b;
+  box-shadow:inset 0 0 25px #000000aa;
 }
 
 .Header {
   height: 50px;
-  margin-bottom: 30px;
 }
 
 .Footer {
@@ -168,11 +168,13 @@ select {
 }
 
 .ContentContainer {
+  padding-top: 50px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  box-shadow: inset 0 0 25px #7a808366;
 }
 
 .ResultContainer {
@@ -193,26 +195,29 @@ select {
   background-color: #eaebdf;
   color: #2b2b2b;
   border: 1px solid #eaebdf;
-  box-shadow: 0 0 5px #2b2b2b;
+  box-shadow: 0 0 10px #2b2b2b;
 }
 
 .mPlayButton:hover {
-  background-color: #fde5c0;
-  border: 1px solid #fde5c0;
+  background-color: #c0e5fd;
   cursor: pointer;
 }
 
 .Reset {
   width: 80px;
+  color: #2b2b2b;
   background-color: #ffa7a7;
   border: 1px solid #ffa7a7;
-  box-shadow: 0 0 5px #2b2b2b;
+  box-shadow: 0 0 10px #2b2b2b;
 }
 
 .Reset:hover {
-  background-color: #ff9797;
-  border: 1px solid #ff9797;
+  background-color: #f78787;
   cursor: pointer;
+}
+
+.Score {
+  font-size: 18px;
 }
 
 .mWinText {

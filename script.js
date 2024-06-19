@@ -27,8 +27,7 @@ playButtons.forEach((button) => {
         button.addEventListener("click", () => {
                 let currRound = PlayRound(button.id),
                 bestOf =
-                Math.floor(selectDrop.value /
-                2) + 1;
+                Math.floor(selectDrop.value / 2) + 1;
 
                 if (playerScore < bestOf && opponentScore < bestOf) {
                         DisplayResult(
@@ -66,7 +65,7 @@ function PlayRound(inputPlayer) {
                         return {
                                 player: player,
                                 opponent: opponent
-                        }
+                        };
                 case 1: // Largest number wins
                         win = player > opponent;
                         break;
@@ -90,7 +89,7 @@ function GetWinner(win, player, opponent) {
         `It's a tie! You both chose ${choiceArray[player]}!`,
         message;
 
-        if (typeof win == 'undefined') {
+        if (typeof win === 'undefined') {
                 divResult.classList.remove("mWinText");
                 divResult.classList.remove("mLoseText");
                 message = messTie;
