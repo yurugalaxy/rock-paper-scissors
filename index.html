@@ -3,6 +3,9 @@
 
 <head>
         <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width">
         <title>replit</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
@@ -10,20 +13,69 @@
 </head>
 
 <body>
-        <label for="BestOfSelect">Best of</label>
-        <select id="BestOfSelect" name="rounds">
-                <option selected>3</option>
-                <option>5</option>
-                <option>7</option>
-                <option>9</option>
-        </select>
-        <div class="ButtonContainer">
-                <button id="rock" class="ButtonRock mPlayButton">Rock</button>
-                <button id="paper" class="ButtonPaper mPlayButton">Paper</button>
-                <button id="scissors" class="ButtonScissors mPlayButton">Scissors</button>
+        <!-- <div class="Header roboto-black">Rock Paper Scissors :3</div>
+        <div class="ContentContainer">
+        <div class="Instructions">Click a button to start!</div>
+        <div class="BestSelectContainer">
+                <label for="BestOfSelect">Best of</label>
+                <select id="BestOfSelect" name="rounds">
+                        <option selected>3</option>
+                        <option>5</option>
+                        <option>7</option>
+                        <option>9</option>
+                </select>
         </div>
-        <div class="Result">Click a button to start!</div>
-        <div class="Score">Score:</div>
+        <div class="ButtonContainer">
+                <div class="PlayContainer">
+                <button id="rock" class="ButtonRock mPlayButton roboto-bold">Rock</button>
+                <button id="paper" class="ButtonPaper mPlayButton roboto-bold">Paper</button>
+                <button id="scissors" class="ButtonScissors mPlayButton roboto-bold">Scissors</button>
+                </div>
+                <button class="Reset">Reset</button>
+        </div>
+        </div>
+        <div class="ResultContainer">
+                <div class="Result"></div>
+                <div class="Score roboto-bold"></div>
+        </div>
+        <div class="Footer">Made by Kae :3</div> -->
+
+        <div class="Header">
+                <div class="mLightText">Rock Paper Scissors :3</div>
+        </div>
+        <div class="ContentContainer">
+                <div class="mLightText">Click a button to play!</div>
+                <div class="SelectContainer">
+                        <label class="mLightText" for="BestOfSelect">
+                                Best of
+                        </label>
+                        <select id="BestOfSelect" name="Rounds">
+                                <option selected>3</option>
+                                <option>5</option>
+                                <option>7</option>
+                                <option>9</option>
+                        </select>
+                </div>
+                <div class="PlayContainer">
+                        <button id="rock" class="
+                        ButtonRock mPlayButton roboto-bold">Rock
+                        </button>
+                        <button id="paper" class="
+                        ButtonPaper mPlayButton roboto-bold">Paper
+                        </button>
+                        <button id="scissors" class="
+                        ButtonScissors mPlayButton roboto-bold">Scissors
+                        </button>
+                </div>
+                <button class="Reset">Reset</button>
+                <div class="ResultContainer">
+                        <div class="Result mLightText"></div>
+                        <div class="Score mLightText roboto-bold"></div>
+                </div>
+        </div>
+        <div class="Footer">
+                <div class="mLightText">Made by Kae :3</div>
+        </div>
 </body>
 
 </html>
